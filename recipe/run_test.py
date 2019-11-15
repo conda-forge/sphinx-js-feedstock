@@ -28,7 +28,7 @@ PKG = {
 
 def test_in_tmp(tmp):
     print("- creating package.json to ensure js/tsdoc are installed/on path...")
-    with open(join(tmp, "package.json"), "w+", encoding="utf-8") as fp:
+    with open(join(tmp, "package.json"), "w+") as fp:
         json.dump(PKG, fp)
 
     print("- installing npm packages...")
