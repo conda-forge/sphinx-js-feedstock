@@ -7,7 +7,7 @@ import tempfile
 
 try:
     which = shutil.which
-except ImportError:
+except:
     from backports.shutil_which import which
 
 NPM = which("npm")
