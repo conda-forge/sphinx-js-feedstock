@@ -6,13 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  - folder: dist
+    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
     sha256: 1523398c87feb2e68f030109f1600ba580ae012a865b626eebd435bb86a7cab9
+  - folder: src
+    url: https://github.com/mozilla/{{ name }}/archive/{{ version }}.tar.gz
+    sha256: cebb0c2478f07b08e4f1ab6457ae4256ddfbac1a3df23c985c9ef5a392fe88c4
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -21,7 +25,9 @@ requirements:
   run:
     - docutils
     - jinja2 >=2.0,<3.0
-    - parsimonious >=0.7.0,<0.8.0
+    # TODO: should be pinned
+    # - parsimonious >=0.7.0,<0.8.0
+    - parsimonious
     - python >=3.6
     - six >=1.9.0,<2.0
     - sphinx >=3.0.0
@@ -29,23 +35,20 @@ requirements:
 
 test:
   requires:
-    - python >=3.6
     - pytest
-    - pip
+    - python >=3.6
     - recommonmark
     - sphinx
   source_files:
     - src/tests
   imports:
     - sphinx_js
-  commands:
-    - python -m pip check
 
 about:
   home: https://github.com/mozilla/sphinx-js
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: src/LICENSE
   summary: Autodoc-style extraction into Sphinx for your JS project
 
   description: |
