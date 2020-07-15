@@ -5,12 +5,7 @@ import re
 import shutil
 import tempfile
 
-try:
-    which = shutil.which
-except:
-    from backports.shutil_which import which
-
-NPM = which("npm")
+NPM = shutil.which("npm")
 HERE = dirname(__file__)
 TESTS = join(HERE, "src", "tests")
 
