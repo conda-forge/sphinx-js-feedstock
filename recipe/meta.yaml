@@ -1,5 +1,5 @@
 {% set name = "sphinx-js" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1" %}
 
 package:
   name: {{ name }}
@@ -8,10 +8,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 6dd8e79c5ad09fef389af5021d7a672066f6e12a51130497f6c611544d62734b
+    sha256: 63523a57cf44a79feafc2876f5ecb5f4dde2f4e0f6dafaa73dc6040b57544292
   - folder: src
     url: https://github.com/mozilla/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: b70a405a16d43d688d504ec64f78bb1b4631b9c0b11e2145511206a7b2dac41e
+    sha256: 0da9aecee0a1c7c178fc6ace7bba64933c7564b73e20e56d007f51b4bed041f4
 
 build:
   noarch: python
