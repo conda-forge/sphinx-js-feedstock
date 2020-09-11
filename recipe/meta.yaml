@@ -1,58 +1,53 @@
 {% set name = "sphinx-js" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  - folder: dist
-    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 6dd8e79c5ad09fef389af5021d7a672066f6e12a51130497f6c611544d62734b
-  - folder: src
-    url: https://github.com/mozilla/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: b70a405a16d43d688d504ec64f78bb1b4631b9c0b11e2145511206a7b2dac41e
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 63523a57cf44a79feafc2876f5ecb5f4dde2f4e0f6dafaa73dc6040b57544292
 
 build:
   noarch: python
   number: 0
-  script: cd dist && {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.7
   run:
     - docutils
     - jinja2 >=2.0,<3.0
+    - nodejs
     # TODO: should be pinned, needs historical version
     # - parsimonious >=0.7.0,<0.8.0
     - parsimonious
-    - python >=3.6
-    - six >=1.9.0,<2.0
+    - python >=3.7
     - sphinx >=3.0.0
-    - nodejs
 
 test:
   requires:
     - pytest
-    - python >=3.6
+    - python >=3.7
     - recommonmark
     - sphinx
     # - pip
   source_files:
-    - src/tests
+    - tests
   imports:
     - sphinx_js
-  # TODO: can't be pip checked because parsimonious
-  # commands:
-  # - python -m pip check
+  commands:
+    # TODO: still can't pip check because parsimonious
+    # - python -m pip check
 
 about:
   home: https://github.com/mozilla/sphinx-js
   license: MIT
   license_family: MIT
-  license_file: src/LICENSE
+  license_file: LICENSE
   summary: Autodoc-style extraction into Sphinx for your JS project
 
   description: |

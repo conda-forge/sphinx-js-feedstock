@@ -7,7 +7,7 @@ import tempfile
 
 NPM = shutil.which("npm")
 HERE = dirname(__file__)
-TESTS = join(HERE, "src", "tests")
+TESTS = join(HERE, "tests")
 
 # TODO: hoist these to the recipe
 PKG = {
