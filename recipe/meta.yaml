@@ -6,17 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  - folder: dist
-    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 63523a57cf44a79feafc2876f5ecb5f4dde2f4e0f6dafaa73dc6040b57544292
-  - folder: src
-    url: https://github.com/mozilla/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 0da9aecee0a1c7c178fc6ace7bba64933c7564b73e20e56d007f51b4bed041f4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 63523a57cf44a79feafc2876f5ecb5f4dde2f4e0f6dafaa73dc6040b57544292
 
 build:
   noarch: python
   number: 0
-  script: cd dist && {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
 
 requirements:
   host:
@@ -36,23 +32,23 @@ requirements:
 test:
   requires:
     - pytest
-    - python >=3.6
+    - python >=3.7
     - recommonmark
     - sphinx
     # - pip
   source_files:
-    - src/tests
+    - tests
   imports:
     - sphinx_js
-  # TODO: can't be pip checked because parsimonious
-  # commands:
-  # - python -m pip check
+  commands:
+    # TODO: still can't pip check because parsimonious
+    # - python -m pip check
 
 about:
   home: https://github.com/mozilla/sphinx-js
   license: MIT
   license_family: MIT
-  license_file: src/LICENSE
+  license_file: LICENSE
   summary: Autodoc-style extraction into Sphinx for your JS project
 
   description: |
