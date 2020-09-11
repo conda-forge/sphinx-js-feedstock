@@ -16,18 +16,17 @@ build:
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.7
   run:
     - docutils
     - jinja2 >=2.0,<3.0
+    - nodejs
     # TODO: should be pinned, needs historical version
     # - parsimonious >=0.7.0,<0.8.0
     - parsimonious
-    - python >=3.6
-    - six >=1.9.0,<2.0
+    - python >=3.7
     - sphinx >=3.0.0
-    - nodejs
 
 test:
   requires:
