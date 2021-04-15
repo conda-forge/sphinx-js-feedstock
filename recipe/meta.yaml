@@ -19,7 +19,8 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - docutils
+    # apparently not pinned for now because pip solver
+    # - docutils
     - jinja2 >=2.0,<3.0
     - nodejs
     # TODO: should be pinned, needs historical version
