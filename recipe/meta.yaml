@@ -1,13 +1,12 @@
-{% set name = "sphinx-js" %}
-{% set version = "3.1.2" %}
+{% set version = "3.2.0" %}
 
 package:
-  name: {{ name }}
+  name: sphinx-js
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 04fe0d2fec6d39b505d70500d0132cfa0efc834760c9598048c1a9dbbc175732
+  url: https://pypi.io/packages/source/s/sphinx-js/sphinx-js-{{ version }}.tar.gz
+  sha256: 5f115cdc942164290346ae187853587a60e6aa8e75c220792bc365792280faee
 
 build:
   noarch: python
@@ -19,15 +18,12 @@ requirements:
     - pip
     - python >=3.7
   run:
-    # apparently not pinned for now because pip solver
-    # - docutils
-    - jinja2 >=2.0,<3.0
+    - jinja2 >2.0
+    - markupsafe ==2.0.1
     - nodejs
-    # TODO: should be pinned, needs historical version
-    # - parsimonious >=0.7.0,<0.8.0
-    - parsimonious
+    - parsimonious >=0.10.0,<0.11.0
     - python >=3.7
-    - sphinx >=3.0.0
+    - sphinx >=4.1.0,<6.0.0
 
 test:
   requires:
@@ -35,14 +31,13 @@ test:
     - python >=3.7
     - recommonmark
     - sphinx
-    # - pip
+    - pip
   source_files:
     - tests
   imports:
     - sphinx_js
   commands:
-    # TODO: still can't pip check because parsimonious
-    # - python -m pip check
+    - python -m pip check
 
 about:
   home: https://github.com/mozilla/sphinx-js
