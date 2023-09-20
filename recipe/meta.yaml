@@ -1,4 +1,4 @@
-{% set version = "3.2.1" %}
+{% set version = "3.2.2" %}
 
 package:
   name: sphinx-js
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sphinx-js/sphinx-js-{{ version }}.tar.gz
-  sha256: 6f4dcf14317ff113cdeac0aa0fca5d77d5db0233af14571d44dd06796ad99edd
+  sha256: 9e3105994dd0aa6d3257b8b4195dca38e335b223bf28dbec8699f1b624b55ad4
 
 build:
   noarch: python
