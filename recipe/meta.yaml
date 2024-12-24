@@ -21,11 +21,11 @@ requirements:
     - setuptools
   run:
     - jinja2 >2.0
-    - markupsafe ==2.0.1
+    - markupsafe
     - nodejs
     - parsimonious >=0.10.0,<0.11.0
     - python >={{ python_min }}
-    - sphinx >=4.1.0
+    - sphinx >=5
 
 test:
   requires:
