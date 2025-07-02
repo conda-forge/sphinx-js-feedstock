@@ -11,7 +11,7 @@ package:
 source:
   # url: https://pypi.org/packages/source/s/sphinx-js/sphinx_js-${{ version }}.tar.gz
   url: https://github.com/pyodide/sphinx-js/archive/refs/tags/${{ version }}.tar.gz
-  sha256: a467fdf3b114951251166043127edced6c99940d1221516a539f08158cee36de
+  sha256: b6fd0d6733e57e1986b1c0d5b8883d92fea39b7eb0cb3943f43127654870f50d
 
 build:
   number: 0
