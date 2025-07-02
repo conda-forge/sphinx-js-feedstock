@@ -3,17 +3,14 @@ schema_version: 1
 
 context:
   version: "5.0.0"
-  typedoc_min: "0.25.0"
-
 
 package:
   name: sphinx-js
   version: ${{ version }}
 
 source:
-  # url: https://pypi.org/packages/source/s/sphinx-js/sphinx_js-${{ version }}.tar.gz
-  url: https://github.com/pyodide/sphinx-js/archive/refs/tags/${{ version }}.tar.gz
-  sha256: b6fd0d6733e57e1986b1c0d5b8883d92fea39b7eb0cb3943f43127654870f50d
+  url: https://pypi.org/packages/source/s/sphinx-js/sphinx_js-${{ version }}.tar.gz
+  sha256: 81deb29a71d5f4afe0c89a7c6ba9a82878640cc0457a3f92251625ee2c302004
 
 build:
   number: 0
