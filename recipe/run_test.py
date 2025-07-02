@@ -5,7 +5,6 @@ import re
 import shutil
 import tempfile
 
-from sphinx_js.typedoc import MIN_TYPEDOC_VERSION
 
 NPM = shutil.which("npm")
 HERE = dirname(__file__)
@@ -14,10 +13,10 @@ TESTS = join(HERE, "tests")
 # TODO: hoist these to the recipe
 PKG = {
     "devDependencies": {
-        "jsdoc": "*",
-        "typedoc": f"""{".".join(map(str, MIN_TYPEDOC_VERSION))}""",
+        "jsdoc": "4.*",
+        "typedoc": "0.28.*",
     },
-    "scripts": {"test": "python -m pytest -vv"},
+    "scripts": {"test": "python -m pytest -vv --tb=long --color=yes"},
 }
 
 
