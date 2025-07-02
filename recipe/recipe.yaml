@@ -18,7 +18,7 @@ build:
   noarch: python
   script:
     env:
-      SETUPTOOLS_SCM_PRETEND_VERSION_FOR_SPHINX_JS: ${{ version }}
+      SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
     content:
       - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
