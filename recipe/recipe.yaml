@@ -29,6 +29,8 @@ requirements:
     - pip
     - python ${{ python_min }}.*
   run:
+    - attrs
+    - cattrs <25.1
     - jinja2 >2.0
     - markupsafe 3.0.2.*
     - nodejs
