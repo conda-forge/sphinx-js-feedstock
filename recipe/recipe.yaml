@@ -22,7 +22,7 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}.0
+    - python ${{ python_min }}.*
     - setuptools
   run:
     - jinja2 >2.0

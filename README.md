@@ -3,25 +3,11 @@ About sphinx-js-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sphinx-js-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/mozilla/sphinx-js
+Home: https://github.com/pyodide/sphinx-js
 
 Package license: MIT
 
-Summary: Autodoc-style extraction into Sphinx for your JS project
-
-When you write a JavaScript library, how do you explain it to people? If
-it's a small project in a domain your users are familiar with, JSDoc's
-alphabetical list of routines might suffice. But in a larger project, it is
-useful to intersperse prose with your API docs without having to copy and
-paste things.
-
-sphinx-js lets you use the industry-leading Sphinx documentation tool with
-JS projects. It provides a handful of directives, patterned after the
-Python-centric autodoc ones, for pulling JSDoc-formatted documentation into
-reStructuredText pages. And, because you can keep using JSDoc in your code,
-you remain compatible with the rest of your JS tooling, like Google's
-Closure Compiler.
-
+Summary: Support for using Sphinx on JSDoc-documented JS code
 
 Current build status
 ====================
