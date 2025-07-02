@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 5.0.0
+
+package:
+  name: sphinx-js
+  version: ${{ version }}
+
+source:
+  # url: https://pypi.org/packages/source/s/sphinx-js/sphinx_js-${{ version }}.tar.gz
+  url: https://github.com/pyodide/sphinx-js/archive/refs/tags/${{ version }}.tar.gz
+  sha256: a467fdf3b114951251166043127edced6c99940d1221516a539f08158cee36de
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.0
+    - setuptools
+  run:
+    - jinja2 >2.0
+    - markupsafe
+    - nodejs
+    - parsimonious >=0.10.0,<0.11.0
+    - python >=${{ python_min }}
+    - sphinx >=4.1.0
+
+tests:
+  - python:
+      imports: sphinx_js
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+  - files:
+      source:
+        - tests/
+      recipe:
+        - run_test.py
+    requirements:
+      run:
+        - pytest
+        - recommonmark
+        - sphinx
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - python run_test.py
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Support for using Sphinx on JSDoc-documented JS code
+  homepage: https://github.com/pyodide/sphinx-js
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
