@@ -5,19 +5,18 @@ import re
 import shutil
 import tempfile
 
+
 NPM = shutil.which("npm")
 HERE = dirname(__file__)
 TESTS = join(HERE, "tests")
 
 # TODO: hoist these to the recipe
 PKG = {
-  "devDependencies": {
-    "jsdoc": "3.6.3",
-    "typedoc": "0.15.0"
-  },
-  "scripts": {
-    "test": "python -m pytest -vv"
-  }
+    "devDependencies": {
+        "jsdoc": "4.*",
+        "typedoc": "0.28.*",
+    },
+    "scripts": {"test": "python -m pytest -vv --tb=long --color=yes"},
 }
 
 
@@ -42,8 +41,9 @@ if __name__ == "__main__":
 
     try:
         print("- ensuring no parent paths of tests start with _")
-        assert not re.findall("[\\/]_", TMP), \
+        assert not re.findall("[\\/]_", TMP), (
             "!!! path probably contains a child with an underscore: {}".format(TMP)
+        )
         test_in_tmp(TMP)
         print("SUCCESS")
     finally:
