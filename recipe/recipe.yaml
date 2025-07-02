@@ -21,12 +21,13 @@ build:
 
 requirements:
   host:
+    - hatch-vcs
+    - hatchling
     - pip
     - python ${{ python_min }}.*
-    - setuptools
   run:
     - jinja2 >2.0
-    - markupsafe
+    - markupsafe 3.0.2.*
     - nodejs
     - parsimonious >=0.10.0,<0.11.0
     - python >=${{ python_min }}
