@@ -51,11 +51,15 @@ tests:
         - run_test.py
     requirements:
       run:
+        - beautifulsoup4
+        - defusedxml
+        - nox
         - pytest
-        - recommonmark
-        - sphinx
-        - pip
+        - pytest-cov
         - python ${{ python_min }}.*
+        - python-build
+        - recommonmark
+        - twine
     script:
       - python run_test.py
 
