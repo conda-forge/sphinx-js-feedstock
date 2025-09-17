@@ -7,7 +7,7 @@
 
 [project]
 name = "sphinx-js-feedstock"
-version = "3.50.1"  # conda-smithy version used to generate this file
+version = "3.52.2"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/sphinx-js-feedstock"
 authors = ["@conda-forge/sphinx-js"]
 channels = ["conda-forge"]
@@ -34,6 +34,7 @@ description = "List contents of sphinx-js-feedstock packages built for variant l
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
+shellcheck = "*"
 [feature.smithy.tasks.build-locally]
 cmd = "python ./build-locally.py"
 description = "Build packages locally using the same setup scripts used in conda-forge's CI"
