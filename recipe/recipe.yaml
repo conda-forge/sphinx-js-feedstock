@@ -42,7 +42,7 @@ tests:
       imports: sphinx_js
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - 3.14.*
   - files:
       source:
         - tests/
