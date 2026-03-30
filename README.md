@@ -3,11 +3,13 @@ About sphinx-js-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sphinx-js-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/pyodide/sphinx-js
+Home: https://pypi.org/project/sphinx-js
 
 Package license: MIT
 
 Summary: Support for using Sphinx on JSDoc-documented JS code
+
+Development: https://github.com/pyodide/sphinx-js
 
 Current build status
 ====================
