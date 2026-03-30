@@ -3,6 +3,8 @@ schema_version: 1
 
 context:
   version: "5.0.3"
+  python_check_max: "3.14"
+  nodejs_check_max: "24"
 
 package:
   name: sphinx-js
@@ -42,16 +44,15 @@ tests:
       imports: sphinx_js
       python_version:
         - ${{ python_min }}.*
-        - 3.14.*
+        - ${{ python_check_max }}.*
   - files:
       source:
         - tests/
-      recipe:
-        - run_test.py
     requirements:
       run:
         - beautifulsoup4
         - defusedxml
+        - nodejs ${{ nodejs_check_max }}.*
         - nox
         - pytest
         - pytest-cov
@@ -60,13 +61,14 @@ tests:
         - recommonmark
         - twine
     script:
-      - python run_test.py
+      file: run_test.py
 
 about:
   license: MIT
   license_file: LICENSE
   summary: Support for using Sphinx on JSDoc-documented JS code
-  homepage: https://github.com/pyodide/sphinx-js
+  homepage: https://pypi.org/project/sphinx-js
+  repository: https://github.com/pyodide/sphinx-js
 
 extra:
   recipe-maintainers:
