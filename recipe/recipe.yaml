@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "5.0.2"
+  version: "5.0.3"
 
 package:
   name: sphinx-js
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/sphinx-js/sphinx_js-${{ version }}.tar.gz
-  sha256: 09c955ccb715a1622a866979c6af2bf5f7892e686f48ee05d2736bcec444f0d9
+  sha256: df4bc7813f9ec68b7e3af49089269c8e6e937444b6ea03ff2a97aa5b6e887217
 
 build:
   number: 0
