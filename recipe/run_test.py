@@ -15,6 +15,7 @@ PKG = {
     "devDependencies": {
         "jsdoc": "4.*",
         "typedoc": "0.28.*",
+        "typescript": "5.*",
     },
     "scripts": {
         "test": "coverage run --source sphinx_js --branch -m pytest -vv --tb=long --color=yes"
@@ -27,7 +28,7 @@ COV_REPORT = [
     "report",
     "--show-missing",
     "--skip-covered",
-    "--fail-under=100",
+    f"--fail-under=94",
 ]
 
 

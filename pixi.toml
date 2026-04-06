@@ -5,7 +5,7 @@
 
 [workspace]
 name = "sphinx-js-feedstock"
-version = "3.58.0"  # conda-smithy version used to generate this file
+version = "3.59.0"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/sphinx-js-feedstock"
 authors = ["@conda-forge/sphinx-js"]
 channels = ["conda-forge"]
