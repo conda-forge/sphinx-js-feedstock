@@ -15,9 +15,21 @@ PKG = {
     "devDependencies": {
         "jsdoc": "4.*",
         "typedoc": "0.28.*",
+        "typescript": "5.*",
     },
-    "scripts": {"test": "python -m pytest -vv --tb=long --color=yes"},
+    "scripts": {
+        "test": "coverage run --source sphinx_js --branch -m pytest -vv --tb=long --color=yes"
+    },
 }
+
+
+COV_REPORT = [
+    "coverage",
+    "report",
+    "--show-missing",
+    "--skip-covered",
+    f"--fail-under=94",
+]
 
 
 def test_in_tmp(tmp):
@@ -33,6 +45,9 @@ def test_in_tmp(tmp):
 
     print("- running pytest inside npm...")
     check_call([NPM, "run", "test"], cwd=tmp)
+
+    print("- running coverage report...")
+    check_call(COV_REPORT, cwd=tmp)
 
 
 if __name__ == "__main__":
